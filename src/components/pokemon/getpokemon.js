@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import Button from "@mui/material/Button";
 
 const GetPokemon = () => {
   const [pokemon, setPkm] = useState("");
@@ -13,7 +14,7 @@ const GetPokemon = () => {
 
   return (
     <div>
-      <button onClick={getPkm}>Choose Your Pokemon!</button>
+      <Button variant="contained" onClick={getPkm}>Choose Your Pokemon!</Button>
       <br></br>
       <strong>{pokemon}</strong>
     </div>
