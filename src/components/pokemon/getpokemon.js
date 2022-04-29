@@ -1,11 +1,12 @@
 import React, { useState } from "react";
 import Button from "@mui/material/Button";
+import "./styles.css"
 
 const GetPokemon = () => {
   const [pokemon, setPkm] = useState("");
 
-  const getPkm = () => {
-    fetch("https://pokeapi.co/api/v2/pokemon/charizard")
+  const getKanto = () => {
+    fetch("https://pokeapi.co/api/v2/pokemon?limit=151&offset=0")
       .then((response) => response.json())
       .then((data) => {
         setPkm(data.name);
@@ -13,8 +14,8 @@ const GetPokemon = () => {
   };
 
   return (
-    <div>
-      <Button variant="contained" onClick={getPkm}>Choose Your Pokemon!</Button>
+    <div className="getpkm">
+      <Button variant="contained" onClick={getKanto}>Choose Your Pokemon!</Button>
       <br></br>
       <strong>{pokemon}</strong>
     </div>
